@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prendas</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" >
+</head>
+<body>
+<div th:replace="~{fragments/nav}"></div>
+<table>
+    <thead>
+        <th>Marca</th>
+        <th>Tipo de prenda</th>
+        <th>Nº ejemplares</th>
+        <th>Acciones</th>
+    </thead>
+    <tbody>
+        <tr th:each="p : ${prendas}">
+            <td th:text="${p.marca}"></td>
+            <td th:text="${p.tipoPrenda}"></td>
+            <td th:text="${p.ejemplares.size}"></td>
+            <td><a th:href="@{/prendas/{marca}(marca = ${p.marca})}">Ver mas</a></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

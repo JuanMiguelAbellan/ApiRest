@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Prenda</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" >
+</head>
+<body>
+<div th:replace="~{fragments/nav}"></div>
+<h2>Nueva prenda</h2>
+<form action="/prendas/nueva" method="post">
+    <label>Marca: </label>
+    <input name="marca" type="text" placeholder="Nombre de la marca">
+    <label>Tipo de prenda</label>
+    <select name="tipoPrenda" >
+        <option th:each="tp : ${tipoPrenda}" th:text="${tp}"></option>
+    </select>
+    <button>Guardar</button>
+</form>
+</body>
+</html>

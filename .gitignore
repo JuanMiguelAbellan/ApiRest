@@ -31,9 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-###code###
-/src/main/java/com/cpifppiramide/prueba1/controller/*
-/src/main/java/com/cpifppiramide/prueba1/dao/prendas/DAOPrendasMySQL.java
-/src/main/java/com/cpifppiramide/prueba1/dao/ejemplares/DAOEjemplaresMySQL.java
-/src/main/resources/templates/*

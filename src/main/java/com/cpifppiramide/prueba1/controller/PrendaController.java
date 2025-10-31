@@ -50,7 +50,7 @@ public class PrendaController {
 
     @PostMapping("/prendas/nueva")
     public String insertarPrenda(@RequestParam String marca, @RequestParam String tipoPrenda, Model model){
-        Prenda prendaNueva= new Prenda(marca, TipoPrenda.valueOf(tipoPrenda));
+        Prenda prendaNueva= new Prenda(marca, tipoPrenda);
         DAOFactory.getInstance().getDaoPrendas().inserta(prendaNueva);
 
         return "redirect:/prendas";

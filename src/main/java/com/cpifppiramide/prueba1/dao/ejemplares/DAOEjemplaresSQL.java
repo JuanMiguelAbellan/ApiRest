@@ -23,7 +23,7 @@ public class DAOEjemplaresSQL implements DAOEjemplares{
             statement.setString(2, prenda.getMarca());
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
-                Ejemplar ejemplar = new Ejemplar(new Prenda(rs.getString("prenda") , TipoPrenda.valueOf(rs.getString("tipoPrenda"))), Color.valueOf(rs.getString("color")), Talla.valueOf(rs.getString("talla")), rs.getInt("stock"));
+                Ejemplar ejemplar = new Ejemplar(new Prenda(rs.getString("prenda") , rs.getString("tipoPrenda")), Color.valueOf(rs.getString("color")), Talla.valueOf(rs.getString("talla")), rs.getInt("stock"));
                 listaEjemplares.add(ejemplar);
             }
         } catch (SQLException e) {

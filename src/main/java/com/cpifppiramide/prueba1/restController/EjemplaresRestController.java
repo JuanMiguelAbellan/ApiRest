@@ -19,7 +19,6 @@ public class EjemplaresRestController {
 
     @PostMapping("/api/ejemplares/nuevo")
     public Ejemplar insertarNuevoEjemplar(@RequestBody Ejemplar ejemplar){
-
         DAOFactory.getInstance().getDaoEjemplares().inserta(ejemplar);
 
         return ejemplar;

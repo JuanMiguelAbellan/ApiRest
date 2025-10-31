@@ -9,9 +9,10 @@ public class Prenda {
     private TipoPrenda tipoPrenda;
     private List<Ejemplar> ejemplares;
 
-    public Prenda(String marca, TipoPrenda tipoPrenda) {
+
+    public Prenda(String marca, String tipoPrenda) {
         this.marca = marca;
-        this.tipoPrenda = tipoPrenda;
+        this.tipoPrenda = TipoPrenda.valueOf(tipoPrenda);
         this.ejemplares = new ArrayList<>();
     }
 

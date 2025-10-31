@@ -27,7 +27,7 @@ public class DAOPrendasSQL implements DAOPrendas{
             PreparedStatement statement = DBConnection.getInstance().prepareStatement(query);
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
-                Prenda prenda = new Prenda(rs.getString("marca"), TipoPrenda.valueOf(rs.getString("tipoPrenda")));
+                Prenda prenda = new Prenda(rs.getString("marca"), rs.getString("tipoPrenda"));
                 List<Ejemplar> listaEjemplares= DAOFactory.getInstance().getDaoEjemplares().get(prenda);
                 prenda.setEjemplares(listaEjemplares);
 
@@ -50,7 +50,7 @@ public class DAOPrendasSQL implements DAOPrendas{
             statement.setString(1, marca);
             ResultSet rs = statement.executeQuery();
             if (rs.next()){
-                prenda= new Prenda(rs.getString("marca"), TipoPrenda.valueOf(rs.getString("tipoPrenda")));
+                prenda= new Prenda(rs.getString("marca"), rs.getString("tipoPrenda"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
